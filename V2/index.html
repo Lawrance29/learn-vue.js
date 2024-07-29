@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Belajar VueJS</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <!-- if == true, menampilkan kedua text, selain itu menampilkan text pesan 2 saja -- >
+        <p v-text="pesan1" v-if="tampilkan"></p>
+        <p v-text="pesan2"></p> -->
+        <!-- if-else in vue v2 (v-if & v-else) -->
+       <p v-text="pesan1" v-if="tampilkan"></p>
+       <p v-else="pesan2"></p>
+       <img :src="gambar"></p>
+       <a :href="link">link</a>
+    </div>
+
+    <script src="vue.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
