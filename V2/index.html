@@ -1,24 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Belajar VueJS</title>
 </head>
+
 <body>
     <div id="app">
         <!-- <!-- if == true, menampilkan kedua text, selain itu menampilkan text pesan 2 saja -- >
         <p v-text="pesan1" v-if="tampilkan"></p>
         <p v-text="pesan2"></p> -->
         <!-- if-else in vue v2 (v-if & v-else) -->
-       <p v-text="pesan1" v-if="tampilkan"></p>
-       <p v-else="pesan2"></p>
-       <img :src="gambar"></p>
-       <a :href="link">link</a>
+        <p :class="warna" v-text="pesan1" v-if="tampilkan"></p>
+        <p v-else="pesan2"></p>
+        <img :src="gambar"></p>
+        <a :href="link" :style="stylingLink">link</a>
+        <!-- tooltip = text yang tampil ketika object di hover -->
+        <p :title="tooltip">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit maxime deleniti
+            inventore, quod vitae non nihil aperiam tempore ab ipsum incidunt. Voluptas repellendus magnam sequi eos
+            aliquam qui sed obcaecati!</p>
+        <!-- form -->
+        <form>
+            <h1>SUBMIT FORM</h1>
+            <p>Username: <input type="text" name="username" v-model="username"></p>
+            <p>Password: <input type="password" name="password" v-model="password"></p>
+            <b>Gender:</b>
+            <p>Laki-laki: <input type="radio" name="laki-laki" value="Laki-laki" v-model="gender"></p>
+            <p>Perempuan: <input type="radio" name="perempuan" value="Perempuan" v-model="gender"></p>
+            <p>Birth date: <input type="date" name="birth" v-model="birth"></p>
+            <div>
+                <p>City:</p>
+                <input list="city" name="city" v-model="city">
+                <datalist id="city" name="choose_city">
+                    <option>Yogyakarta</option>
+                    <option>Palembang</option>
+                    <option>Kediri</option>
+                </datalist>
+            </div>
+            <b>Choose for mixed profile color:</b>
+            <p><input type="checkbox" name="color" value="Blue" v-model="color">Blue</p>
+            <p><input type="checkbox" name="color" value="Red" v-model="color">Red</p>
+            <p><input type="checkbox" name="color" value="Yellow" v-model="color">Yellow</p>
+            <p>Color visibility: <input type="range" name="visibility" v-model="visibility"></p>
+        </form>
+        <h3>Your input's result:</h3>
+        <p>Username: {{username}}</p>
+        <p>password: {{password}}</p>
+        <p>Birth date: {{birth}}</p>
+        <p>City: {{city}}</p>
+        <p>Gender: {{gender}}</p>
+        <p>Profile color: {{color}}</p>
+        <p>Profile color visibility: {{visibility}}%</p>
+
+        <!-- COMPUTED property mulai pake function dan logic -->
+         <p>5 + 5 = {{sum}}</p>
+         <!-- <p>Bilangan ke-1: <input type="number" v-model="num"></p>
+         <p>Bilangan ke-2: <input type="number" v-model="num2"></p>
+         <button @click="multiply">Multiply</button>
+         <p>{{result}}</p> -->
+
+         <!-- METHOD property -->
+         <p>Bilangan ke-1: <input type="number" v-model="num"></p>
+         <p>Bilangan ke-2: <input type="number" v-model="num2"></p>
+         <button @click="multiply">Multiply</button>
+         <p>{{result}}</p>
+         
     </div>
 
     <script src="vue.min.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
