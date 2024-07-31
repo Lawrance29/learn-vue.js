@@ -56,18 +56,22 @@
         <p>Profile color visibility: {{visibility}}%</p>
 
         <!-- COMPUTED property mulai pake function dan logic -->
-         <p>5 + 5 = {{sum}}</p>
-         <!-- <p>Bilangan ke-1: <input type="number" v-model="num"></p>
-         <p>Bilangan ke-2: <input type="number" v-model="num2"></p>
-         <button @click="multiply">Multiply</button>
-         <p>{{result}}</p> -->
+        <p>5 + 5 = {{sum}}</p>
+        <!-- <p>Bilangan ke-1: <input type="number" v-model="num"></p>
+        <p>Bilangan ke-2: <input type="number" v-model="num2"></p>
+        <button @click="multiply">Multiply</button>
+        <p>{{result}}</p> -->
 
-         <!-- METHOD property -->
-         <p>Bilangan ke-1: <input type="number" v-model="num"></p>
-         <p>Bilangan ke-2: <input type="number" v-model="num2"></p>
-         <button @click="multiply">Multiply</button>
-         <p>{{result}}</p>
-         
+        <!-- METHOD property -->
+        <p>Bilangan ke-1: <input type="number" v-model="num"></p>
+        <p>Bilangan ke-2: <input type="number" v-model="num2"></p>
+        <button @click="multiply">Multiply</button>
+        <p>{{result}}</p>
+
+        <!-- WATCH property -->
+        <p>Enter your name: <input type="text" name="input_name" v-model="watchName"></p>
+        <p>{{watchResult}}</p>
+
     </div>
 
     <script src="vue.min.js"></script>
