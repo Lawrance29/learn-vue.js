@@ -1,56 +1,72 @@
 * {
-    padding: 0;
-    margin:0;
+  margin: 0;
+  padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
 }
-
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1rem;
   overflow-wrap: break-word;
 }
-
 #app {
-  height:100vh;
+  gap: 2rem;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   justify-content: center;
-  gap: 2rem;
 }
-
-.card{
+.card {
   max-width: 60rem;
   padding: 4rem;
-  border: 0 solid #cecece;
+  border: none;
   border-radius: 8px;
-  background-color: #cecece;
+  background-color: #f0f0f0;
+}
+button, .operator {
+  border: none;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background-color: #7fff00;
+}
+input:not([type="radio"]), .degreeResult{
+  border: none;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #fdfdfd;
 }
 
 /* NAVBAR //1// */
-.navbar{
+.navbar {
   gap: 8rem;
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   justify-content: space-around;
 }
-
-a{
+a {
   cursor: pointer;
   color: #808080;
   text-decoration: none;
 }
-
 a:hover {
   color: #7fff00;
   border-bottom: 3px #7fff00 solid;
 }
-
-a:not(:hover){
+a:not(:hover) {
   margin: 0 0 3px 0;
 }
 
 /* CHANGE ALIGN TEXT //3//*/
-.textAlignRadioBtn{
+.textAlignRadioBtn {
   gap: 8rem;
   display: flex;
   flex-direction: row;
@@ -60,9 +76,54 @@ a:not(:hover){
 }
 
 /* CALCULATOR //4// */
-.calcForm{
+.calcForm {
   gap: 1rem;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
+}
+
+/* //5// */
+.viewCounter{
+  margin-bottom: 1rem;
+}
+
+/* //6// */
+.convertSection {
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.degreeButtons {
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
+}
+.degreeResult{
+  width: 10rem;
+}
+
+/* //7// */
+.registerForm{
+  gap: 6px;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+}
+.closeRegisterPage{
+  display: flex;
+  justify-content: flex-end;
+}
+.username, .gender{
+  gap: 6px;
+  display: flex;
+  flex-direction: row;
+}
+.username> input{
+  width: 15rem;
+}
+.email, .password, .birthDate{
+  width:100%;
 }

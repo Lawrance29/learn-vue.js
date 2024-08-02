@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="app">
-      <!-- NAVBAR (tidak bisa tampil di browser)-->
+      <!-- NAVBAR (next: belajar vue-router)-->
       <!-- 1 -->
       <div class="navbar">
         <a :href="home">Home</a>
@@ -17,15 +17,15 @@
         <a :href="about">About</a>
       </div>
       <!-- 2 -->
-      <div class="card">
+      <section class="card">
         <p>
           Ketik nama warna (merah/kuning/biru) =
           <input type="text" name="inputColor" v-model="inputColor" />
         </p>
         <h4 :style="{color : textColor}">EXAMPLE</h4>
-      </div>
+      </section>
       <!-- 3 -->
-      <div class="card">
+      <section class="card">
         <p :style="{textAlign: changeTextAlign}">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus
           vitae officia aut ipsam? Consectetur unde inventore neque. Voluptates
@@ -59,9 +59,9 @@
             Right
           </p>
         </form>
-      </div>
+      </section>
       <!-- 4 -->
-      <div class="card">
+      <section class="card">
         <h4 :style="{textAlign: 'center', marginBottom:'7px'}">
           Simple Calculator
         </h4>
@@ -69,8 +69,8 @@
           <div class="num1">
             <input type="number" v-model="num1" placeholder="10" />
           </div>
-          <div class="operator">
-            <select v-model="operator">
+          <div>
+            <select v-model="operator" class="operator">
               <option value="+">+</option>
               <option value="-">-</option>
               <option value="*">x</option>
@@ -82,7 +82,93 @@
           </div>
           <div>= {{ countResult }}</div>
         </form>
-      </div>
+      </section>
+      <!-- 5 -->
+      <section class="card">
+        <div class="viewCounter">{{resultCounter}}</div>
+        <div class="counterButtons">
+          <button @click="count">Count</button>
+          <button @click="reset">Reset</button>
+        </div>
+      </section>
+      <!-- 6 -->
+      <section class="card">
+        <h3><sup>o</sup>C Conversion</h3>
+        <div class="convertSection">
+          <input class="celciusInput" type="number" v-model="celcius" />
+          <div class="degreeButtons">
+            <button @click="fahrenheit">To Fahrenheit</button>
+            <button @click="kelvin">To Kelvin</button>
+          </div>
+          <div class="degreeResult">{{degrees}}</div>
+        </div>
+      </section>
+      <!-- 7 -->
+      <section class="card">
+        <h3>Register Form</h3>
+        <button @click="showForm" v-show="!show">Register</button>
+        <form class="registerForm" v-show="show">
+          <a
+            href="product.html"
+            class="
+            "
+            @click="closeRegisterPage"
+            >X</a
+          >
+          <div class="username">
+            <input type="text" v-model="firstname" placeholder="Firstname" />
+            <input type="text" v-model="lastname" placeholder="Lastname" />
+          </div>
+          <input
+            type="email"
+            class="email"
+            name="email"
+            v-model="email"
+            placeholder="Email"
+          />
+          <input
+            type="password"
+            class="password"
+            name="password"
+            v-model="password"
+            placeholder="Password"
+          />
+          <input
+            type="date"
+            class="birthDate"
+            name="birthDate"
+            v-model="birthDate"
+            placeholder="MM/DD/YYYY"
+          />
+          <div class="gender">
+            <p>
+              <input
+                type="radio"
+                name="male"
+                value="Male"
+                v-model="gender"
+              />Male
+            </p>
+            <p>
+              <input
+                type="radio"
+                name="Female"
+                value="Female"
+                v-model="gender"
+              />Female
+            </p>
+          </div>
+          <div class="message">{{message()}}</div>
+          <button
+            type="button"
+            class="registerBtn"
+            value="Register"
+            :disabled="register"
+          >
+            Register
+          </button>
+        </form>
+      </section>
     </div>
 
     <script src="../vue.min.js"></script>
